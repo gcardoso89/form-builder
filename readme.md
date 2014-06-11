@@ -62,7 +62,7 @@
  2. Select element value != "";
 
 # Version 0.2
-- Add the error_selector parameter;
+- Added the error_selector parameter;
 
 ## Generate New Version Code
 Using NodeJS and UglifyJS node package
