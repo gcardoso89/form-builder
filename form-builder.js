@@ -1390,9 +1390,9 @@ FormBuilder.prototype.errorPlacement = function(error, ele) {
     var parentData = $(ele).data("parentLineSelector");
     var err = null;
     if (isDefined(parentData, false)) {
-        err = $(parentData).find(".frm-error");
+        err = $(parentData).find(isDefined(this.params.error_selector, ".frm-error"));
     } else {
-        err = element.closest(isDefined(this.params.parent_line_selector, ".form-group")).find(".frm-error");
+        err = element.closest(isDefined(this.params.parent_line_selector, ".form-group")).find(isDefined(this.params.error_selector, ".frm-error"));
     }
     err.html(error);
     err.show();
