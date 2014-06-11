@@ -2,6 +2,8 @@
 
 # HOW TO USE
 
+```javascript
+
 <script src="[path_to_folder]/form-builder.min.js">
 <script>
 
@@ -48,6 +50,8 @@
     });
 
 </script>
+
+```
 
 
 # Version 0.1
