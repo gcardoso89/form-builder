@@ -326,7 +326,7 @@ $.extend($.validator, {
 					"[type='week'], [type='time'], [type='datetime-local'], " +
 					"[type='range'], [type='color'] ",
 					"focusin focusout keyup", delegate)
-				.validateDelegate("[type='radio'], [type='checkbox'], select, option", "click", delegate);
+				.validateDelegate("[type='radio'], [type='checkbox'], select, option", "click change ifChanged", delegate);
 
 			if ( this.settings.invalidHandler ) {
 				$(this.currentForm).bind("invalid-form.validate", this.settings.invalidHandler);
@@ -668,6 +668,10 @@ $.extend($.validator, {
 				label.removeClass( this.settings.validClass ).addClass( this.settings.errorClass );
 				// replace message on existing label
 				label.html(message);
+                // Method added to solve the problem of the "ErrorPlacement" function! This method was running only one time.
+                if ( this.settings.errorPlacement ) {
+                    this.settings.errorPlacement(label, $(element) );
+                }
 			} else {
 				// create label
 				label = $("<" + this.settings.errorElement + ">")
