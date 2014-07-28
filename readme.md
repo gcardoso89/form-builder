@@ -52,6 +52,11 @@
 </script>
 
 ```
+# Version 0.4
+- Changes in validationSuccess method;
+- Merge with navigator 2014 changes;
+- "select_required" validation rule improved;
+
 # Version 0.3
 - Run errorPlacement everytime, even after the error is placed;
 - "change" and "ifChanged" events added.
@@ -72,10 +77,10 @@ Using NodeJS and UglifyJS node package
 
 Debug Version
 ```linux
-$ uglifyjs src/jquery.validate.js src/additional-methods.js src/is-defined.js src/language.pt-PT.js src/form-builder.0.3.js -o form-builder.0.3.js -b
+$ uglifyjs src/jquery.validate.js src/additional-methods.js src/is-defined.js src/language.pt-PT.js src/form-builder.js -o form-builder.js -b
 ```
 
 Minified Version
 ```linux
-$ uglifyjs src/jquery.validate.js src/additional-methods.js src/is-defined.js src/language.pt-PT.js src/form-builder.0.3.js -o form-builder.0.3.min.js
+$ uglifyjs src/jquery.validate.js src/additional-methods.js src/is-defined.js src/language.pt-PT.js src/form-builder.js -o form-builder.min.js
 ```

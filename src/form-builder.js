@@ -85,8 +85,9 @@ function FormBuilder(pars) {
         return (value != "");
     });
 
-    jQuery.validator.addMethod('select_required', function (value) {
-        return (value != "");
+    jQuery.validator.addMethod('select_required', function (val) {
+        var value = (val==null) ? "" : val;
+        return value != "";
     });
 
     jQuery.validator.addMethod('added_pets', function (value) {
@@ -167,10 +168,17 @@ FormBuilder.prototype.errorPlacement = function (error, ele) {
 
 };
 
-FormBuilder.prototype.validationSuccess = function (error, element) {
+FormBuilder.prototype.validationSuccess = function (error, ele) {
 
-    /*var err = $(element).closest( isDefined(this.params.parent_line_selector, '.form-group') ).find('.frm-error');
-     err.hide();*/
+    var element = $(ele);
+    var parentData = $(ele).data('parentLineSelector');
+    var err = null;
+    if (isDefined(parentData, false)) {
+        err = $(parentData).find(isDefined( this.params.error_selector , '.frm-error' ));
+    } else {
+        err = element.closest(isDefined(this.params.parent_line_selector, '.form-group')).find(isDefined( this.params.error_selector , '.frm-error' ));
+    }
+    err.hide();
 
 };
 
