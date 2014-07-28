@@ -1,10 +1,10 @@
-## FormBuilder plugin v0.3
+## FormBuilder plugin v0.4
 
 # HOW TO USE
 
 ```javascript
 
-<script src="[path_to_folder]/form-builder.0.3.min.js">
+<script src="[path_to_folder]/form-builder.0.4.min.js">
 <script>
 
     $(function(){
